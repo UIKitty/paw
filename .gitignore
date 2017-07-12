@@ -1,0 +1,31 @@
+*.log
+/dist
+*.iml
+.idea
+.nuxt
+docs-dist
+sw.js
+workbox*.js
+
+
+# OSX folder attributes
+.DS_Store
+
+# temporary files
+*~
+*.back
+*.tmp
+
+# project dependencies
+node_modules
+
+# npm debugging logs
+npm-debug.log*
+
+# config folder
+config
+
+# junk files and folders
+.sass-cache
+files
+files.map
