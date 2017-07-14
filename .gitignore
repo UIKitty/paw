@@ -18,6 +18,7 @@ workbox*.js
 
 # project dependencies
 node_modules
+bower_components
 
 # npm debugging logs
 npm-debug.log*
