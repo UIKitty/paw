@@ -7,35 +7,56 @@
 'use strict';
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
+const sassdoc = require('sassdoc');
+
 
 // paths
 var paths = {
-    sass_source : ['./source/**/*.scss'],
-    css_source : ['./source/css'],
-    dist : ['./dist']
+    sass_source : ['./source/scss/*.scss'],
+    css_source : './source/css',
+    maps : './maps',
+    dist : './dist'
+};
+
+// compressed
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'compressed'
 };
 
 // css
 gulp.task('sass', () => {
   return gulp.src(paths.sass_source)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.css_source));
-});
-
-gulp.task('concat-css', ['sass'],() => {
-    return gulp.src(path.css_source).pipe(concat('main.css')).pipe(gulp.dest(paths.dist));
-});
-
-gulp.task('minify-css', ['concat-css'], () => {
-  return gulp.src(paths.dist + '/main.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(sourcemaps.write(paths.maps))
     .pipe(gulp.dest(paths.dist));
 });
+
+//  Documentation
+var sassdocOptions = {
+  dest: './dist/docs'
+};
+
+gulp.task('sassdoc', () => {
+  return gulp
+    .src(paths.css_source)
+    .pipe(sassdoc(sassdocOptions))
+    .resume();
+});
+
 
 // watcher
 // Rerun the task when a file changes
 gulp.task('watch', () => {
-    gulp.watch(paths.sass_source, ['minify-css']);
+    gulp.watch(paths.sass_source, ['sass']);
+});
+
+
+// default
+gulp.task('default', ['sass', 'watch'], () => {
+    // This will only run if the dependency tasks are successful...
 });
