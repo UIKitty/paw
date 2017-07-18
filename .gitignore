@@ -3,7 +3,7 @@
 *.iml
 .idea
 .nuxt
-docs-dist
+/docs
 sw.js
 workbox*.js
 

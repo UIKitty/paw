@@ -18,27 +18,37 @@ var paths = {
     sass_source : ['./source/scss/*.scss'],
     css_source : './source/css',
     maps : './maps',
-    dist : './dist'
+    dist : './dist',
+    public: './public'
 };
 
-// compressed
-var sassOptions = {
+
+
+
+
+// css: results in public
+var sassPubOptions = {
   errLogToConsole: true,
-  outputStyle: 'compressed'
+  outputStyle: 'expanded'
 };
 
-// css
 gulp.task('sass', () => {
   return gulp.src(paths.sass_source)
     .pipe(sourcemaps.init())
-    .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(sourcemaps.write(paths.maps))
-    .pipe(gulp.dest(paths.dist));
+    .pipe(sass(sassPubOptions).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.public));
+});
+
+
+// watcher :  Rerun the task when a file changes
+gulp.task('watch', () => {
+    gulp.watch(paths.sass_source, ['sass']);
 });
 
 //  Documentation
 var sassdocOptions = {
-  dest: './dist/docs'
+  dest: './docs'
 };
 
 gulp.task('sassdoc', () => {
@@ -48,13 +58,12 @@ gulp.task('sassdoc', () => {
     .resume();
 });
 
-
-// watcher
-// Rerun the task when a file changes
-gulp.task('watch', () => {
-    gulp.watch(paths.sass_source, ['sass']);
+// Prodduction: results in dist, no sourcemap, has documentations
+gulp.task('production', ['sassdoc'], () => {
+  return gulp.src(paths.sass_source)
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest(paths.dist));
 });
-
 
 // default
 gulp.task('default', ['sass', 'watch'], () => {
