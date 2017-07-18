@@ -1,0 +1,50 @@
+/* Coolors Exported Palette - coolors.co/011627-fdfffc-2ec4b6-e71d36-ff9f1c */
+
+/* this one is also useful
+https://color.adobe.com/explore/?filter=most-used&time=all 
+*/
+
+
+$white: rgba(253, 255, 252, 1);
+$blue:  rgba(1, 25, 39, 1);
+$yellow:rgba(255, 159, 28, 1);
+$green: rgba(46, 196, 182, 1);
+$red:   rgba(231, 29, 54, 1);
+
+$primary:   $blue;
+$secondary: $yellow;
+$tertiary:  $green;
+$accent:    $red;
+
+
+// Grey family
+$white :        $white;
+$grey:        #B9BAB8;
+$greyLighter:   lighter($grey, 10%);
+$greyLight:     lighter($grey, 5%);
+$greyDark:      darker($grey, 5%);
+$greyDarker:    darker($grey, 10%);
+
+// Primary variations
+$primaryLighter:   lighter($primary, 10%);
+$primaryLight:     lighter($primary, 5%);
+$primaryDark:      darker($primary, 5%);
+$primaryDarker:    darker($primary, 10%);
+
+// Secondary variations
+$secondaryLighter:   lighter($secondary, 10%);
+$secondaryLight:     lighter($secondary, 5%);
+$secondaryDark:      darker($secondary, 5%);
+$secondaryDarker:    darker($secondary, 10%);
+
+// Tertiary variations
+$tertiaryLighter:   lighter($tertiary, 10%);
+$tertiaryLight:     lighter($tertiary, 5%);
+$tertiaryDark:      darker($tertiary, 5%);
+$tertiaryDarker:    darker($tertiary, 10%);
+
+// Primary variations
+$accentLighter:   lighter($accent, 10%);
+$accentLight:     lighter($accent, 5%);
+$accentDark:      darker($accent, 5%);
+$accentDarker:    darker($accent, 10%);
