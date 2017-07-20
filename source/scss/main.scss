@@ -1,0 +1,16 @@
+// Modules and Variables"
+@import "partials/base";
+
+// Partials: typography, buttons, textboxes, selectboxes
+
+@import "partials/typography";
+
+//  Third-party
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "bower_components/normalize-css/normalize";
+@import "bower_components/susy/sass/susy";
+
+
+h1 {
+    color: $primary;
+} 

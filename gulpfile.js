@@ -15,15 +15,13 @@ const sassdoc = require('sassdoc');
 
 // paths
 var paths = {
-    sass_source : ['./source/scss/*.scss'],
+    sass_watch : './source/scss/**/*.scss',
+    sass_source : './source/scss/*.scss',
     css_source : './source/css',
     maps : './maps',
     dist : './dist',
     public: './public'
 };
-
-
-
 
 
 // css: results in public
@@ -36,14 +34,14 @@ gulp.task('sass', () => {
   return gulp.src(paths.sass_source)
     .pipe(sourcemaps.init())
     .pipe(sass(sassPubOptions).on('error', sass.logError))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write(paths.public))
     .pipe(gulp.dest(paths.public));
 });
 
 
 // watcher :  Rerun the task when a file changes
 gulp.task('watch', () => {
-    gulp.watch(paths.sass_source, ['sass']);
+    gulp.watch(paths.sass_watch, ['sass']);
 });
 
 //  Documentation
@@ -53,7 +51,7 @@ var sassdocOptions = {
 
 gulp.task('sassdoc', () => {
   return gulp
-    .src(paths.css_source)
+    .src(paths.sass_source)
     .pipe(sassdoc(sassdocOptions))
     .resume();
 });
