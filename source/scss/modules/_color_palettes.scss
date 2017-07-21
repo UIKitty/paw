@@ -4,7 +4,6 @@
 https://color.adobe.com/explore/?filter=most-used&time=all 
 */
 
-
 $white: rgba(253, 255, 252, 1);
 $blue:  rgba(1, 25, 39, 1);
 $yellow:rgba(255, 159, 28, 1);
@@ -16,35 +15,34 @@ $secondary: $yellow;
 $tertiary:  $green;
 $accent:    $red;
 
-
 // Grey family
 $white :        $white;
-$grey:        #B9BAB8;
-$greyLighter:   lighter($grey, 10%);
-$greyLight:     lighter($grey, 5%);
-$greyDark:      darker($grey, 5%);
-$greyDarker:    darker($grey, 10%);
+$gray:        #B9BAB8;
+$grayLighter:   lighten($gray, 10%);
+$grayLight:     lighten($gray, 5%);
+$grayDark:      darken($gray, 5%);
+$grayDarker:    darken($gray, 10%);
 
 // Primary variations
-$primaryLighter:   lighter($primary, 10%);
-$primaryLight:     lighter($primary, 5%);
-$primaryDark:      darker($primary, 5%);
-$primaryDarker:    darker($primary, 10%);
+$primaryLighter:   lighten($primary, 10%);
+$primaryLight:     lighten($primary, 5%);
+$primaryDark:      darken($primary, 5%);
+$primaryDarker:    darken($primary, 10%);
 
 // Secondary variations
-$secondaryLighter:   lighter($secondary, 10%);
-$secondaryLight:     lighter($secondary, 5%);
-$secondaryDark:      darker($secondary, 5%);
-$secondaryDarker:    darker($secondary, 10%);
+$secondaryLighter:   lighten($secondary, 10%);
+$secondaryLight:     lighten($secondary, 5%);
+$secondaryDark:      darken($secondary, 5%);
+$secondaryDarker:    darken($secondary, 10%);
 
 // Tertiary variations
-$tertiaryLighter:   lighter($tertiary, 10%);
-$tertiaryLight:     lighter($tertiary, 5%);
-$tertiaryDark:      darker($tertiary, 5%);
-$tertiaryDarker:    darker($tertiary, 10%);
+$tertiaryLighter:   lighten($tertiary, 10%);
+$tertiaryLight:     lighten($tertiary, 5%);
+$tertiaryDark:      darken($tertiary, 5%);
+$tertiaryDarker:    darken($tertiary, 10%);
 
 // Primary variations
-$accentLighter:   lighter($accent, 10%);
-$accentLight:     lighter($accent, 5%);
-$accentDark:      darker($accent, 5%);
-$accentDarker:    darker($accent, 10%);
+$accentLighter:   lighten($accent, 10%);
+$accentLight:     lighten($accent, 5%);
+$accentDark:      darken($accent, 5%);
+$accentDarker:    darken($accent, 10%);
