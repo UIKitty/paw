@@ -2,7 +2,6 @@
 @import "partials/base";
 
 // Partials: typography, buttons, textboxes, selectboxes
-
 @import "partials/typography";
 
 //  Third-party
@@ -10,7 +9,6 @@
 @import "bower_components/normalize-css/normalize";
 @import "bower_components/susy/sass/susy";
 
-
-h1 {
-    color: $primary;
-} 
+@include selection {
+    background-color: $secondary;
+}
