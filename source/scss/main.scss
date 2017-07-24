@@ -9,6 +9,122 @@
 @import "bower_components/normalize-css/normalize";
 @import "bower_components/susy/sass/susy";
 
-@include selection {
+::selection {
     background-color: $secondary;
+}
+
+.palette-primary , .palette-secondary ,  .palette-tertiary , .palette-accent , .palette-gray {
+    text-align: center;
+    div {
+        width: 15%;
+        height: 45px;
+        margin: 5px;
+        display: inline-block;
+    }
+}
+
+//  Primary
+.primary-main {
+    background-color: $primary;
+}
+
+.primary-light{
+    background-color: $primaryLight;
+}
+
+.primary-dark {
+    background-color: $primaryDark;
+}
+
+.primary-lighter {
+    background-color: $primaryLighter;
+}
+
+.primary-darker {
+    background-color: $primaryDarker;
+}
+
+//  Secondary
+
+.secondary-main {
+    background-color: $secondary;
+}
+
+.secondary-light{
+    background-color: $secondaryLight;
+}
+
+.secondary-dark {
+    background-color: $secondaryDark;
+}
+
+.secondary-lighter {
+    background-color: $secondaryLighter;
+}
+
+.secondary-darker {
+    background-color: $secondaryDarker;
+}
+
+// tertiary
+.tertiary-main {
+    background-color: $tertiary;
+}
+
+.tertiary-light{
+    background-color: $tertiaryLight;
+}
+
+.tertiary-dark {
+    background-color: $tertiaryDark;
+}
+
+.tertiary-lighter {
+    background-color: $tertiaryLighter;
+}
+
+.tertiary-darker {
+    background-color: $tertiaryDarker;
+}
+
+// accent
+.accent-main {
+    background-color: $accent;
+}
+
+.accent-light{
+    background-color: $accentLight;
+}
+
+.accent-dark {
+    background-color: $accentDark;
+}
+
+.accent-lighter {
+    background-color: $accentLighter;
+}
+
+.accent-darker {
+    background-color: $accentDarker;
+}
+
+//  gray
+.gray-main {
+    background-color: $gray;
+}
+
+.gray-light{
+    background-color: $grayLight;
+}
+
+.gray-dark {
+    background-color: $grayDark;
+}
+
+.gray-lighter {
+    background-color: $grayLighter;
+}
+
+.gray-darker {
+    background-color: $grayDarker;
 }

@@ -11,7 +11,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const sassdoc = require('sassdoc');
-
+const autoprefixer = require('gulp-autoprefixer');
 
 // paths
 var paths = {
@@ -35,6 +35,7 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(sass(sassPubOptions).on('error', sass.logError))
     .pipe(sourcemaps.write(paths.public))
+    .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie >= 9']}))
     .pipe(gulp.dest(paths.public));
 });
 
@@ -60,6 +61,7 @@ gulp.task('sassdoc', () => {
 gulp.task('production', ['sassdoc'], () => {
   return gulp.src(paths.sass_source)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie >= 9']}))
     .pipe(gulp.dest(paths.dist));
 });
 
