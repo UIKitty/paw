@@ -1,18 +1,24 @@
 // all sizings
 
-// Typography sizings
-$baseFontSize:          16px;
-$baseLineHeight:        20px;
-
-$fontWeightNormal:      500;
-$fontWeightLight:       100;
-$fontWeightSemiLight:   300;
-$fontWeightSemiBold:    700;
-$fontWeightBold:        900;
-
-$fontSizeLarge:         $baseFontSize * 1.25; // 20px
-$fontSizeSmall:         $baseFontSize * 0.875; // 14px
-$fontSizeMini:          $baseFontSize * 0.75; // 12px
+/* standard screen sizes 
+Micro-screens: future development (Is there any website for this little devices)
+Small screens: (phones) 320px - 767px 
+Mid-range: (tablets): 768 - 1199px
+Large: (monitors): 1200px 1440px
+Extra-large:(TV size): 1440px and above
+*/
+$min-phone-size: 320px;
+$min-tablet-size: 768px;
+$min-monitor-size: 1200px;
+$min-tv-size: 1400px;
+$max-phone-size:767px;
+$max-tablet-size:1199px;
+$max-monitor-size: 1439px;
 
 
 // buton sharpening
+$sharp-edge: @include border-radius(0);
+$smooth-edge: @include border-radius(5px);
+$smooth-edge: @include border-radius(20px);
+
+$default-border-radius: $smooth-edge;
